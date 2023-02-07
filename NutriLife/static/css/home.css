@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600&family=Telex&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    /*background-image: url('https://cdn.discordapp.com/attachments/1050605974651678840/1053350771166543902/home-unsplash.jpg');*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background: rgb(255,255,255);
+
+    overflow-y: hidden;
+    
+}
+
+
+nav {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: transparent;
+    height: 110px;
+
+    padding-left: 81px;
+    padding-right: 81px;
+
+    margin-bottom: 100px;
+}
+
+
+nav img {
+    width: 60px;
+}
+
+
+nav .logo {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    gap:10px;
+
+    font-family: 'Telex';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+}
+
+
+nav .botoes { 
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+}
+
+.botoes button, .about button {
+   
+    width: 151px;
+    height: 53px;
+    
+
+    border: 1px solid #5af35f;
+    background-color: #d9af00;
+    border-radius: 15px;
+
+    font-family: 'Telex';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+
+    transition: background 0.2s linear;
+}
+
+.botoes button:hover, .about button:hover {
+    background-color: #00fd08;
+    border: 2px solid #384538;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+
+    gap: 50px;
+
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 132px;
+}
+
+.about h1 {
+    width: 564px;
+    height: 243px;
+   
+
+    font-family: 'Telex';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 62px;
+    line-height: 112%;
+
+    letter-spacing: 0.095em;
+
+    color: #000000;
+
+}
+
+
+main img {
+
+    width: 564px;
+    margin-top: -100px;
+
+    border-radius: 0px 100px;
+}

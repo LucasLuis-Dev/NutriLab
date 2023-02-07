@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+    <title>NutriLife - Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/cadastrar.css') }}">
+{% endblock %}
+
+{% block body %}
+    <section class="fundo-imagem">
+        <img src="{{ url_for('static', filename = 'assets/nadine-primeau--ftWfohtjNw-unsplash.jpg')}}">
+    </section>
+    <main class="formulario">
+        
+        <h1>Crie sua conta gratuita</h1>
+
+        <form method="POST" action="">
+            {{ formCadastrar.csrf_token}}
+            
+
+            <div class="nome">
+                <p>{{ formCadastrar.username.label }}</p>
+
+                {{ formCadastrar.username(class="barra") }}
+
+                {% if formCadastrar.username.errors %}
+                    <p class="erro-formulario">Digite seu nome para criar a conta</p>
+                {% endif %}
+            </div>
+            
+            <div class="email">
+                <p>{{ formCadastrar.email.label }}</p>
+                
+                {{ formCadastrar.email(class="barra") }}
+
+                {% if formCadastrar.email.errors %}
+                    {% for error in formCadastrar.email.errors %}
+                        {% if error in 'E-mail já cadastrado. Cadastre-se com outro e-mail ou faça login para continuar' %}
+                            <p class="erro-formulario">E-mail já cadastrado. Cadastre-se com outro e-mail ou faça login para continuar</p>
+                        {% else %}
+                            <p class="erro-formulario">E-mail inválido</p>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+            
+            <div class="senha">
+                <p>{{ formCadastrar.senha.label }}</p>
+                
+                {{ formCadastrar.senha(class="barra") }}
+
+                {% if formCadastrar.senha.errors %}
+                    <p class="erro-formulario">Senha curta, a senha deve conter entre 6-20 caracteres</p>
+                {% endif %}                 
+            </div>
+            
+            <div class="confirmacao-senha">
+                <p>{{ formCadastrar.confirmacao.label}}</p>
+                
+                {{ formCadastrar.confirmacao(class="barra") }}
+
+                {% if formCadastrar.confirmacao.errors %}
+                    <p class="erro-formulario">A senha inserida não é igual a anterior</p>
+                {% endif %}
+            </div>
+            
+            <div class="botao">
+                {{ formCadastrar.botao_submit_cadastrar(class='submit') }}
+
+            </div>
+            
+        </form>
+        <p class="redirect-login">Já possui uma conta? se sim&#32;<a href="{{ url_for('login') }}">clique aqui e faça seu login</a> </p>
+        
+    </main>
+{% endblock %}
+    

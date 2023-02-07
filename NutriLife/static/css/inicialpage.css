@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+   
+    width: 100vw;
+    height: 42px;
+
+    padding-left: 80px;
+    padding-right: 80px;
+
+    margin-top: 26px;
+    margin-bottom: 20px;
+    
+    
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+}
+
+header img {
+    width: 32px;
+    margin-right: 15px;
+}
+
+header h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+
+    
+   
+}
+
+header h2 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    
+
+}
+
+header a {
+    text-decoration: none;
+}
+
+header button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+
+    width: 174px;
+    height: 42px;
+
+
+
+    
+
+    border: 1px solid #5af35f;
+    background-color: #d9af00;
+    border-radius: 15px;
+
+    transition: background 0.2s linear;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 39px;
+}
+
+header button:hover {
+    background-color: #00fd08;
+    border: 2px solid #384538;
+}
+
+hr {
+    background-color: black;
+    width: 90%;
+
+    margin-left: 75px;
+
+    margin-bottom: 100px;
+}
+
+
+main {
+    display: flex;
+
+    flex-direction: column;
+
+
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+main h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    
+    text-align: center;
+
+    margin-bottom: 82px;
+}
+
+.pacientes {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.pacientes article {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 350px;
+
+    padding: 20px;
+    border-radius: 30px;
+
+    gap: 10px;
+
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+    
+
+    /*background-color: #2fe835;*/
+    background-color: white;
+
+    border: 3px solid #5af35f;
+}
+
+
+.pacientes article img {
+    width:180px;
+    background-color: white;
+}
+
+.pacientes article h2, h3 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    
+    text-align: center;
+
+    
+
+    background-color: white;
+}

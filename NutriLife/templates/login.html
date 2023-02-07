@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+    <title>NutriLife - login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<main class="formulario">
+    
+    <h1>Faça o Login na sua Conta</h1>
+
+    <form method="POST" action="">
+        {{ formLogin.csrf_token }}
+        
+        <div class="email">
+            <p>{{ formLogin.email.label }}</p>
+            
+            
+            {{ formLogin.email(class="barra") }}
+            
+            {% if formLogin.email.errors %}
+                <p class="erro-formulario">E-mail inválido</p>
+            {% endif %}
+        </div>
+        
+        <div class="senha">
+            <p>{{ formLogin.senha.label }}</p>
+            
+            {{ formLogin.senha(class="barra") }}
+
+            {% if formLogin.senha.errors %}
+                <p class="erro-formulario">Senha curta, a senha deve conter entre 6-20 caracteres</p>
+            {% endif %}
+        </div>
+        
+        <div class="botao">
+            {{ formLogin.botao_submit_logar(class='submit') }}
+        </div>
+        
+    </form>
+    <p class="redirect-cadastro">Ainda não possui uma conta?&#32<a href="{{ url_for('cadastrar') }}">clique aqui e cadastre-se</a> </p>
+
+</main>
+<section class="fundo-imagem">
+    <img src="{{ url_for('static', filename = 'assets/nadine-primeau-Juvw-a-RvvI-unsplash.jpg')}}">
+</section>
+{% endblock %}
+    

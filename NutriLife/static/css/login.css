@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap');
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+
+    background-color: #E5E5E5;
+
+    margin-top: 20px;
+
+}
+
+.fundo-imagem img {
+    width: 100%;
+    height: 95vh;
+
+    border-radius: 20px;
+}
+
+.formulario {
+    display: flex;
+
+    width: 600px;
+    height: 95vh;
+  
+
+    flex-direction: column;
+
+    align-items: center;
+
+    background-color: #FCFEFF;
+
+    border-radius: 20px;
+    
+    
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.formulario h1 {
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 39px;
+    
+    margin-top: 124px;
+    margin-bottom: 52px;
+}
+
+.formulario .email, .senha {
+    display: flex;
+    flex-direction: column;
+}
+
+.email, .senha p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+
+
+    color: #7C838A;
+}
+
+.erro-formulario  {
+    color: red;
+
+    font-size: 13px;
+
+    margin-top: -35px;
+    margin-bottom: 7px;
+}
+
+
+.barra {
+    width: 400px;
+    height: 45px;
+    background: rgba(176, 186, 195, 0.4);
+    border-radius: 20px;
+
+    border: none;
+
+    padding: 15px;
+    margin-bottom: 41px;
+}
+
+.botao {
+    text-align: center;
+}
+
+.submit {
+    text-align: center;
+
+    width: 140px;
+    height: 50px;
+
+    margin-bottom: 35px;
+
+    background-color: #5af35f;
+    border-radius: 10px;
+    border: none;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 39px;
+}
+
+
+.redirect-cadastro {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 27px;
+
+    color: #7C838A;
+
+}
+
+.redirect-cadastro a {
+    text-decoration: none;
+    color: #2fe835;
+}

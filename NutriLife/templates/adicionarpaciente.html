@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/adicionarpaciente.css') }}">
+{% endblock %}
+
+
+{% block body %}
+
+    <main>
+        
+        <section class="title">
+            <h1>Cadastre seu Paciente</h1>
+
+            <img src="../static/assets/cadastro.png" alt="">
+        </section>
+
+        <section class="cadastro">
+            <form method="POST" action="">
+                {{ formCadastrarPaciente.csrf_token}}
+                
+    
+                <div class="nome">
+                    <p>{{ formCadastrarPaciente.nome.label }}</p>
+    
+                    {{ formCadastrarPaciente.nome(class="barra") }}
+    
+                    {% if formCadastrarPaciente.nome.errors %}
+                        <p class="erro-formulario">Digite o nome do paciente nome para cadastra-lo conta</p>
+                    {% endif %}
+                </div>
+                
+                <div class="email">
+                    <p>{{ formCadastrarPaciente.email.label }}</p>
+                    
+                    {{ formCadastrarPaciente.email(class="barra") }}
+    
+                    {% if formCadastrarPaciente.email.errors %}
+                        {% for error in formCadastrarPaciente.email.errors %}
+                            {% if error in 'E-mail já cadastrado. Cadastre-se com outro e-mail ou faça login para continuar' %}
+                                <p class="erro-formulario">E-mail já cadastrado. Cadastre-se com outro e-mail ou faça login para continuar</p>
+                            {% else %}
+                                <p class="erro-formulario">E-mail inválido</p>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+    
+                <div class="sexo-paciente">
+                    <p>{{ formCadastrarPaciente.sexo.label }}</p>
+    
+                    {{ formCadastrarPaciente.sexo(class="barra") }}
+                </div>
+    
+                <div class="idade">
+                    <p>{{ formCadastrarPaciente.idade.label }}</p>
+    
+                    {{ formCadastrarPaciente.idade(class="barra") }}
+                </div>
+    
+                <div class="telefone">
+                    <p>{{ formCadastrarPaciente.telefone.label }}</p>
+    
+                    {{ formCadastrarPaciente.telefone(class="barra") }}
+                </div>
+    
+                <div class="peso">
+                    <p>{{ formCadastrarPaciente.peso.label }}</p>
+    
+                    {{ formCadastrarPaciente.peso(class="barra") }}
+                </div>
+    
+                <div class="altura">
+                    <p>{{ formCadastrarPaciente.altura.label }}</p>
+    
+                    {{ formCadastrarPaciente.altura(class="barra") }}
+                </div>
+    
+                <div class="percentual-gordura">
+                    <p>{{ formCadastrarPaciente.percentualGordura.label }}</p>
+    
+                    {{ formCadastrarPaciente.percentualGordura(class="barra") }}
+                </div>
+    
+                <div class="percentual-muscular">
+                    <p>{{ formCadastrarPaciente.percentualMuscular.label }}</p>
+    
+                    {{ formCadastrarPaciente.percentualMuscular(class="barra") }}
+                </div>
+    
+                <div class="colesterol-hdl">
+                    <p>{{ formCadastrarPaciente.colesterolHdl.label }}</p>
+    
+                    {{ formCadastrarPaciente.colesterolHdl(class="barra") }}
+                </div>
+    
+                <div class="colesterol-ldl">
+                    <p>{{ formCadastrarPaciente.colesterolLdl.label }}</p>
+    
+                    {{ formCadastrarPaciente.colesterolLdl(class="barra") }}
+                </div>
+
+                <div class="colesterol-total">
+                    <p>{{ formCadastrarPaciente.colesterolTotal.label }}</p>
+    
+                    {{ formCadastrarPaciente.colesterolTotal(class="barra") }}
+                </div>
+    
+                <div class="trigliceridios">
+                    <p>{{ formCadastrarPaciente.trigliceridios.label }}</p>
+    
+                    {{ formCadastrarPaciente.trigliceridios(class="barra") }}
+                </div>
+
+                <div class="botao">
+                    {{ formCadastrarPaciente.botao_submit_cadastrar_paciente(class='submit') }}
+                </div>
+                
+                
+            </form>
+
+        </section>
+
+       
+
+        
+    </main>
+
+
+{% endblock %}

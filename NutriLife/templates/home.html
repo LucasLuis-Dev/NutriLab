@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>NutriLife</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/home.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<nav>
+    <div class="logo">
+        <img src="../static/assets/comida-saudavel.png">
+        <h1>NutriLife</h1>
+    </div>
+    
+
+    <div class="botoes">
+        <a href="{{ url_for('cadastrar') }}"><button>Cadastrar</button></a>
+        <a href="{{ url_for('login') }}"><button>Login</button></a>
+    </div>
+    
+</nav>
+
+<main>
+    <div class="about">
+        <h1>
+            Venha fazer parte do nossa plataforma gratuita para nutricionistas
+        </h1>
+        <a href="{{ url_for('cadastrar') }}"><button>Vamos lá!</button></a>
+    </div>
+    
+
+    <img src="../static/assets/foto-nutricionista.jpg" alt="foto de uma mulher com alguns legumes">
+
+    
+</main>
+
+
+{% endblock %}
