@@ -3,6 +3,9 @@ from flask import  render_template, url_for, request, flash , redirect
 from NutriLife import app, DATABASE, bcrypt
 from NutriLife.models import Nutricionista, Paciente
 from flask_login import login_user, current_user
+import secrets
+import os
+from PIL import Image
 
 
 @app.route('/')
@@ -56,6 +59,7 @@ def mostrarPacientes():
     return render_template("inicialpage.html", meusPacientes = meusPacientes, nutricionista = current_user)
 
 
+
 @app.route('/cadastrar-paciente', methods=['GET', 'POST'])
 def cadastrarPaciente():
 
@@ -63,7 +67,7 @@ def cadastrarPaciente():
 
     if formCadastrarPaciente.validate_on_submit():
         
-        paciente = Paciente(name = formCadastrarPaciente.nome.data, sexo = formCadastrarPaciente.sexo.data, idade = formCadastrarPaciente.idade.data,
+        paciente = Paciente(foto_perfil = formCadastrarPaciente.fotoPerfil.data,name = formCadastrarPaciente.nome.data, sexo = formCadastrarPaciente.sexo.data, idade = formCadastrarPaciente.idade.data,
         email = formCadastrarPaciente.email.data, telefone = formCadastrarPaciente.telefone.data, peso = formCadastrarPaciente.peso.data,
         altura = formCadastrarPaciente.altura.data, percentual_gordura = formCadastrarPaciente.percentualGordura.data, 
         percentual_muscular = formCadastrarPaciente.percentualMuscular.data, colesterol_hdl = formCadastrarPaciente.colesterolHdl.data,

@@ -20,6 +20,7 @@ class Nutricionista(DATABASE.Model, UserMixin):
 
 class Paciente(DATABASE.Model):
     id = DATABASE.Column(DATABASE.Integer,primary_key=True)
+    foto_perfil = DATABASE.Column(DATABASE.String, nullable=False)
     name = DATABASE.Column(DATABASE.String, nullable=False)
     sexo = DATABASE.Column(DATABASE.String, nullable=False)
     idade = DATABASE.Column(DATABASE.Integer)

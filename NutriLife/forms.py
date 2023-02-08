@@ -36,6 +36,7 @@ class FormularioCadastrarPaciente(FlaskForm):
     colesterolLdl = IntegerField('Colesterol LDL do Paciente', validators=[DataRequired()])
     colesterolTotal = IntegerField('Colesterol Total do Paciente', validators=[DataRequired()])
     trigliceridios = StringField('Trigliceridios do Paciente', validators=[DataRequired()])
+    fotoPerfil = FileField('Atualizar Foto de Perfil', validators=[FileAllowed(['jpg','png','jpeg'])])
     botao_submit_cadastrar_paciente = SubmitField('Cadastrar')
 
 
